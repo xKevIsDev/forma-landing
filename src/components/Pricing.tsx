@@ -104,17 +104,17 @@ function PlanButton({
       <button
         onClick={handleClick}
         disabled={loading}
-        className={`w-full flex items-center justify-center gap-2 text-sm font-medium py-3 rounded-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed ${
+        className={`w-full flex items-center justify-center gap-2 text-[15px] font-medium py-3 rounded-full transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed ${
           highlighted
-            ? 'bg-white text-[#111110] hover:bg-[#F5F5F4]'
-            : 'bg-[#111110] text-white hover:bg-[#292524]'
+            ? 'bg-white text-[#1d1d1f] hover:bg-[#f5f5f7]'
+            : 'bg-[#0071e3] text-white hover:bg-[#0077ed]'
         }`}
       >
         {loading && <Loader2 size={14} className="animate-spin" />}
         {loading ? 'Redirecting...' : cta}
       </button>
       {error && (
-        <p className="text-xs text-red-500 mt-2 text-center">{error}</p>
+        <p className="text-[12px] text-red-500 mt-2 text-center">{error}</p>
       )}
     </div>
   );
@@ -132,109 +132,102 @@ export default function Pricing() {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="pricing" className="py-28 px-6 max-w-6xl mx-auto">
-      <div
-        ref={ref}
-        className={`text-center mb-16 transition-all duration-700 ${
-          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-        }`}
-      >
-        <p className="text-xs font-medium text-[#16A34A] uppercase tracking-widest mb-4">
-          Simple pricing
-        </p>
-        <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-[#111110] leading-tight mb-4">
-          Start free, scale
-          <br />
-          <span className="italic text-[#44403C]">when you're ready.</span>
-        </h2>
-        <p className="text-[#78716C] max-w-sm mx-auto text-base font-light">
-          No hidden fees. Cancel or change plans anytime.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {plans.map((plan, index) => (
-          <div
-            key={plan.name}
-            className={`relative rounded-2xl p-6 flex flex-col transition-all duration-500 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-            } ${
-              plan.highlighted
-                ? 'bg-[#111110] text-white border border-[#111110]'
-                : 'bg-white border border-[#E7E5E4] hover-lift'
-            }`}
-            style={{ transitionDelay: `${index * 80}ms` }}
+    <section id="pricing" className="py-24 bg-white">
+      <div className="max-w-[980px] mx-auto px-5">
+        <div
+          ref={ref}
+          className={`text-center mb-14 transition-all duration-700 ${
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
+          <p className="text-[#0071e3] text-[17px] font-semibold mb-3 tracking-tight">
+            Simple pricing
+          </p>
+          <h2
+            className="font-semibold text-[#1d1d1f] leading-tight tracking-tight mb-4"
+            style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)' }}
           >
-            {plan.highlighted && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-[#16A34A] text-white text-[10px] font-semibold px-3 py-1 rounded-full">
-                  Most popular
-                </span>
-              </div>
-            )}
+            Start free, scale
+            <br />
+            when you're ready.
+          </h2>
+          <p className="text-[17px] text-[#6e6e73] max-w-[340px] mx-auto">
+            No hidden fees. Cancel or change plans anytime.
+          </p>
+        </div>
 
-            <div className="mb-6">
-              <p className="text-xs font-medium uppercase tracking-widest mb-2 text-[#A8A29E]">
-                {plan.name}
-              </p>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span
-                  className={`text-4xl font-semibold tracking-tight ${
-                    plan.highlighted ? 'text-white' : 'text-[#111110]'
-                  }`}
-                >
-                  {plan.price}
-                </span>
-                <span
-                  className={`text-sm ${
-                    plan.highlighted ? 'text-[#A8A29E]' : 'text-[#78716C]'
-                  }`}
-                >
-                  {plan.period}
-                </span>
-              </div>
-              <p
-                className={`text-sm font-light ${
-                  plan.highlighted ? 'text-[#D6D3D1]' : 'text-[#78716C]'
-                }`}
-              >
-                {plan.description}
-              </p>
-            </div>
-
-            <div className="flex-1 space-y-3 mb-8">
-              {plan.features.map((feature) => (
-                <div key={feature} className="flex items-start gap-2.5">
-                  <Check
-                    size={14}
-                    className="mt-0.5 flex-shrink-0 text-[#16A34A]"
-                    strokeWidth={2.5}
-                  />
-                  <span
-                    className={`text-sm font-light ${
-                      plan.highlighted ? 'text-[#D6D3D1]' : 'text-[#44403C]'
-                    }`}
-                  >
-                    {feature}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {plans.map((plan, index) => (
+            <div
+              key={plan.name}
+              className={`relative rounded-[22px] p-7 flex flex-col transition-all duration-500 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              } ${
+                plan.highlighted
+                  ? 'bg-[#1d1d1f]'
+                  : 'bg-[#f5f5f7]'
+              }`}
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
+              {plan.highlighted && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-[#0071e3] text-white text-[11px] font-semibold px-3.5 py-1 rounded-full">
+                    Most popular
                   </span>
                 </div>
-              ))}
-            </div>
+              )}
 
-            <PlanButton
-              priceId={plan.priceId}
-              cta={plan.cta}
-              highlighted={plan.highlighted}
-            />
-          </div>
-        ))}
+              <div className="mb-7">
+                <p className={`text-[12px] font-semibold uppercase tracking-widest mb-3 ${plan.highlighted ? 'text-[#6e6e73]' : 'text-[#6e6e73]'}`}>
+                  {plan.name}
+                </p>
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span
+                    className={`text-[40px] font-semibold tracking-tight leading-none ${
+                      plan.highlighted ? 'text-white' : 'text-[#1d1d1f]'
+                    }`}
+                  >
+                    {plan.price}
+                  </span>
+                  <span className={`text-[15px] ${plan.highlighted ? 'text-[#6e6e73]' : 'text-[#6e6e73]'}`}>
+                    {plan.period}
+                  </span>
+                </div>
+                <p className={`text-[14px] ${plan.highlighted ? 'text-[#8e8e93]' : 'text-[#6e6e73]'}`}>
+                  {plan.description}
+                </p>
+              </div>
+
+              <div className="flex-1 space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <div key={feature} className="flex items-start gap-2.5">
+                    <Check
+                      size={14}
+                      className={`mt-0.5 flex-shrink-0 ${plan.highlighted ? 'text-[#0071e3]' : 'text-[#0071e3]'}`}
+                      strokeWidth={2.5}
+                    />
+                    <span className={`text-[14px] ${plan.highlighted ? 'text-[#aeaeb2]' : 'text-[#3a3a3c]'}`}>
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <PlanButton
+                priceId={plan.priceId}
+                cta={plan.cta}
+                highlighted={plan.highlighted}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

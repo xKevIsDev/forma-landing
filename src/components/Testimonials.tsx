@@ -8,8 +8,6 @@ const testimonials = [
     role: 'Head of Design',
     company: 'Loom',
     avatar: 'MC',
-    color: '#DBEAFE',
-    textColor: '#1D4ED8',
   },
   {
     quote:
@@ -18,8 +16,6 @@ const testimonials = [
     role: 'Principal Engineer',
     company: 'Ramp',
     avatar: 'JO',
-    color: '#D1FAE5',
-    textColor: '#065F46',
   },
   {
     quote:
@@ -28,8 +24,6 @@ const testimonials = [
     role: 'Design Systems Lead',
     company: 'Contentsquare',
     avatar: 'SD',
-    color: '#FEF3C7',
-    textColor: '#92400E',
   },
   {
     quote:
@@ -38,8 +32,6 @@ const testimonials = [
     role: 'Product Designer',
     company: 'Brex',
     avatar: 'CR',
-    color: '#FCE7F3',
-    textColor: '#9D174D',
   },
   {
     quote:
@@ -48,8 +40,6 @@ const testimonials = [
     role: 'VP Design',
     company: 'Mercury',
     avatar: 'NH',
-    color: '#EDE9FE',
-    textColor: '#5B21B6',
   },
   {
     quote:
@@ -58,8 +48,6 @@ const testimonials = [
     role: 'Frontend Lead',
     company: 'Retool',
     avatar: 'TY',
-    color: '#FFEDD5',
-    textColor: '#9A3412',
   },
 ];
 
@@ -69,8 +57,6 @@ function TestimonialCard({
   role,
   company,
   avatar,
-  color,
-  textColor,
   index,
 }: (typeof testimonials)[0] & { index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -80,7 +66,7 @@ function TestimonialCard({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), index * 60);
+          setTimeout(() => setVisible(true), index * 50);
           observer.disconnect();
         }
       },
@@ -93,21 +79,19 @@ function TestimonialCard({
   return (
     <div
       ref={ref}
-      className={`p-6 rounded-2xl border border-[#E7E5E4] bg-white hover-lift transition-all duration-500 flex flex-col gap-4 ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+      className={`p-7 rounded-[18px] bg-white flex flex-col gap-5 transition-all duration-700 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
+      style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04)' }}
     >
-      <p className="text-sm text-[#44403C] leading-relaxed font-light flex-1">"{quote}"</p>
-      <div className="flex items-center gap-3 pt-2 border-t border-[#F5F5F4]">
-        <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0"
-          style={{ backgroundColor: color, color: textColor }}
-        >
+      <p className="text-[15px] text-[#1d1d1f] leading-relaxed flex-1">"{quote}"</p>
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 rounded-full bg-[#0071e3] flex items-center justify-center text-[11px] font-semibold text-white flex-shrink-0">
           {avatar}
         </div>
         <div>
-          <p className="text-sm font-medium text-[#111110]">{author}</p>
-          <p className="text-xs text-[#A8A29E]">
+          <p className="text-[14px] font-semibold text-[#1d1d1f]">{author}</p>
+          <p className="text-[12px] text-[#6e6e73]">
             {role}, {company}
           </p>
         </div>
@@ -128,32 +112,35 @@ export default function Testimonials() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     if (headingRef.current) observer.observe(headingRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="py-28 bg-[#F5F5F4] border-y border-[#E7E5E4]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-[#f5f5f7]">
+      <div className="max-w-[980px] mx-auto px-5">
         <div
           ref={headingRef}
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-14 transition-all duration-700 ${
             headingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <p className="text-xs font-medium text-[#16A34A] uppercase tracking-widest mb-4">
+          <p className="text-[#0071e3] text-[17px] font-semibold mb-3 tracking-tight">
             What teams say
           </p>
-          <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-[#111110] leading-tight">
+          <h2
+            className="font-semibold text-[#1d1d1f] leading-tight tracking-tight"
+            style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)' }}
+          >
             Loved by design teams
             <br />
-            <span className="italic text-[#44403C]">across the world.</span>
+            across the world.
           </h2>
         </div>
 
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-3 space-y-3">
           {testimonials.map((t, i) => (
             <div key={t.author} className="break-inside-avoid">
               <TestimonialCard {...t} index={i} />
