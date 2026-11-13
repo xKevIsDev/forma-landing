@@ -24,7 +24,7 @@ export default function Hero() {
         <h1 className="font-serif text-[clamp(2.5rem,7vw,5.5rem)] font-medium leading-[1.08] tracking-tight text-[#111110] mb-6 animate-fade-in-up delay-100">
           Design systems that
           <br />
-          <span className="italic text-[#44403C]">actually scale.</span>
+          <span className="italic text-[#B45309]">actually scale.</span>
         </h1>
 
         <p className="text-[clamp(1rem,2vw,1.2rem)] text-[#78716C] max-w-xl mx-auto leading-relaxed mb-10 animate-fade-in-up delay-200 font-light">
