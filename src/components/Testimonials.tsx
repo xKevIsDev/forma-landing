@@ -100,7 +100,7 @@ function TestimonialCard({
       <p className="text-sm text-[#44403C] leading-relaxed font-light flex-1">"{quote}"</p>
       <div className="flex items-center gap-3 pt-2 border-t border-[#F5F5F4]">
         <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0"
+          className="w-9 h-9 rounded-lg flex items-center justify-center text-xs font-semibold flex-shrink-0"
           style={{ backgroundColor: color, color: textColor }}
         >
           {avatar}
@@ -135,7 +135,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-28 bg-[#F5F5F4] border-y border-[#E7E5E4]">
+    <section className="py-28 bg-[#FFFBEB] border-y border-[#FDE68A]">
       <div className="max-w-6xl mx-auto px-6">
         <div
           ref={headingRef}
@@ -143,13 +143,13 @@ export default function Testimonials() {
             headingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <p className="text-xs font-medium text-[#16A34A] uppercase tracking-widest mb-4">
+          <p className="text-xs font-medium text-[#B45309] uppercase tracking-widest mb-4">
             What teams say
           </p>
           <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-[#111110] leading-tight">
             Loved by design teams
             <br />
-            <span className="italic text-[#44403C]">across the world.</span>
+            <span className="italic text-[#B45309]">across the world.</span>
           </h2>
         </div>
 
