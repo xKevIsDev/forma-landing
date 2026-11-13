@@ -20,7 +20,7 @@ const plans = [
   },
   {
     name: 'Pro',
-    price: '$29',
+    price: '$24',
     period: '/month',
     description: 'For growing design teams.',
     priceId: 'price_1TEpbUPo4rWTtRjVV7qWSWaG',
@@ -146,7 +146,7 @@ export default function Pricing() {
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        <p className="text-xs font-medium text-[#16A34A] uppercase tracking-widest mb-4">
+        <p className="text-xs font-medium text-[#B45309] uppercase tracking-widest mb-4">
           Simple pricing
         </p>
         <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-[#111110] leading-tight mb-4">
@@ -167,15 +167,15 @@ export default function Pricing() {
               visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
             } ${
               plan.highlighted
-                ? 'bg-[#111110] text-white border border-[#111110]'
+                ? 'bg-[#451A03] text-white border border-[#B45309]'
                 : 'bg-white border border-[#E7E5E4] hover-lift'
             }`}
             style={{ transitionDelay: `${index * 80}ms` }}
           >
             {plan.highlighted && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-[#16A34A] text-white text-[10px] font-semibold px-3 py-1 rounded-full">
-                  Most popular
+                <span className="bg-[#D97706] text-white text-[10px] font-semibold px-3 py-1 rounded-full">
+                  Best value
                 </span>
               </div>
             )}
@@ -214,7 +214,7 @@ export default function Pricing() {
                 <div key={feature} className="flex items-start gap-2.5">
                   <Check
                     size={14}
-                    className="mt-0.5 flex-shrink-0 text-[#16A34A]"
+                    className="mt-0.5 flex-shrink-0 text-[#D97706]"
                     strokeWidth={2.5}
                   />
                   <span

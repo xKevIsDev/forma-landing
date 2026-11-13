@@ -6,7 +6,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(22, 163, 74, 0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
         }}
       />
 
@@ -35,7 +35,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-in-up delay-300">
           <a
             href="#"
-            className="group flex items-center gap-2 bg-[#111110] text-white text-sm font-medium px-6 py-3 rounded-lg hover:bg-[#292524] transition-all duration-200 w-full sm:w-auto justify-center"
+            className="group flex items-center gap-2 bg-[#B45309] text-white text-sm font-medium px-6 py-3 rounded-lg hover:bg-[#92400E] transition-all duration-200 w-full sm:w-auto justify-center"
           >
             Start for free
             <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform duration-200" />
@@ -57,9 +57,9 @@ export default function Hero() {
       <div className="relative w-full max-w-5xl mx-auto px-6 mt-20 animate-scale-in delay-500">
         <div className="relative rounded-2xl overflow-hidden border border-[#E7E5E4] shadow-2xl shadow-black/5">
           <div className="h-8 bg-[#F5F5F4] border-b border-[#E7E5E4] flex items-center gap-1.5 px-4">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F87171]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#FBBF24]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#34D399]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F87171]" />
             <div className="flex-1 mx-4 h-4 bg-white rounded border border-[#E7E5E4] flex items-center px-2">
               <span className="text-[9px] text-[#A8A29E]">app.forma.design/tokens</span>
             </div>
@@ -72,7 +72,7 @@ export default function Hero() {
                   key={item}
                   className={`h-8 rounded-lg flex items-center px-3 text-xs font-medium transition-colors ${
                     i === 0
-                      ? 'bg-[#111110] text-white'
+                      ? 'bg-[#B45309] text-white'
                       : 'bg-[#FAFAF9] text-[#78716C] hover:bg-[#F5F5F4]'
                   }`}
                 >
@@ -96,7 +96,7 @@ export default function Hero() {
                   { color: '#E7E5E4', name: '200' },
                   { color: '#F5F5F4', name: '100' },
                   { color: '#FAFAF9', name: '50' },
-                  { color: '#16A34A', name: 'green' },
+                  { color: '#D97706', name: 'amber' },
                 ].map(({ color, name }) => (
                   <div key={name} className="space-y-1">
                     <div

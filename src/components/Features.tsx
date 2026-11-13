@@ -79,8 +79,8 @@ function FeatureCard({
       style={{ transitionDelay: `${index * 60}ms` }}
     >
       <div className="flex items-start justify-between mb-4">
-        <div className="w-10 h-10 rounded-xl bg-[#F5F5F4] flex items-center justify-center group-hover:bg-[#111110] transition-colors duration-200">
-          <Icon size={18} className="text-[#78716C] group-hover:text-white transition-colors duration-200" />
+        <div className="w-10 h-10 rounded-xl bg-[#FEF3C7] flex items-center justify-center group-hover:bg-[#B45309] transition-colors duration-200">
+          <Icon size={18} className="text-[#B45309] group-hover:text-white transition-colors duration-200" />
         </div>
         <span className="text-[10px] font-medium text-[#A8A29E] bg-[#F5F5F4] px-2.5 py-1 rounded-full border border-[#E7E5E4]">
           {tag}
@@ -118,13 +118,13 @@ export default function Features() {
           headingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        <p className="text-xs font-medium text-[#16A34A] uppercase tracking-widest mb-4">
+        <p className="text-xs font-medium text-[#B45309] uppercase tracking-widest mb-4">
           Everything you need
         </p>
         <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-[#111110] leading-tight mb-4">
           Built for design systems
           <br />
-          <span className="italic text-[#44403C]">at every stage.</span>
+          <span className="italic text-[#B45309]">at every stage.</span>
         </h2>
         <p className="text-[#78716C] max-w-lg mx-auto text-base font-light leading-relaxed">
           From a startup's first component library to an enterprise's global design language,

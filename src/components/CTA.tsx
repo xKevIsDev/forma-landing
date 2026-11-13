@@ -31,7 +31,7 @@ export default function CTA() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 60% 70% at 80% 50%, rgba(22, 163, 74, 0.15) 0%, transparent 60%)',
+              'radial-gradient(ellipse 60% 70% at 80% 50%, rgba(217, 119, 6, 0.35) 0%, transparent 60%)',
           }}
         />
 
@@ -40,7 +40,7 @@ export default function CTA() {
             <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-white leading-tight mb-3">
               Ready to build something
               <br />
-              <span className="italic text-[#D6D3D1]">beautiful together?</span>
+              <span className="italic text-[#FCD34D]">beautiful together?</span>
             </h2>
             <p className="text-[#78716C] text-base font-light max-w-md">
               Join thousands of teams already using Forma to build better products, faster.
@@ -50,7 +50,7 @@ export default function CTA() {
           <div className="flex flex-col items-center gap-3 flex-shrink-0">
             <a
               href="#"
-              className="group flex items-center gap-2 bg-white text-[#111110] text-sm font-medium px-7 py-3.5 rounded-xl hover:bg-[#F5F5F4] transition-all duration-200 whitespace-nowrap"
+              className="group flex items-center gap-2 bg-[#F59E0B] text-[#111110] text-sm font-medium px-7 py-3.5 rounded-xl hover:bg-[#FBBF24] transition-all duration-200 whitespace-nowrap"
             >
               Start for free
               <ArrowRight

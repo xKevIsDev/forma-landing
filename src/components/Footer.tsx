@@ -27,7 +27,7 @@ export default function Footer() {
                 <a
                   key={social}
                   href="#"
-                  className="w-8 h-8 rounded-lg bg-[#F5F5F4] border border-[#E7E5E4] flex items-center justify-center text-[10px] font-semibold text-[#78716C] hover:bg-[#E7E5E4] hover:text-[#111110] transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-[#FEF3C7] border border-[#FDE68A] flex items-center justify-center text-[10px] font-semibold text-[#78716C] hover:bg-[#E7E5E4] hover:text-[#111110] transition-colors duration-200"
                 >
                   {social}
                 </a>
@@ -61,8 +61,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Forma, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
-            <p className="text-xs text-[#A8A29E]">All systems operational</p>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D97706]" />
+            <p className="text-xs text-[#A8A29E]">Scheduled maintenance</p>
           </div>
         </div>
       </div>
